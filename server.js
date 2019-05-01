@@ -4,6 +4,7 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+
 // CONTROLLERS
 const usersCtrl = require('./controllers/usersCtrl');
 
@@ -32,7 +33,7 @@ app.get('/', (req, res) => {
 
 // ----------------------------------- API ROUTES ----------------------------------- //
 
-// Contacts
+// Users
 app.use('/api/v1/users', usersCtrl);
 
 // ----------------------------------- START SERVER ----------------------------------- //
