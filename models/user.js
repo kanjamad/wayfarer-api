@@ -7,8 +7,14 @@ const UserSchema = new Schema({
     currentCity: String,
     email: {type:String, required:true, lowercase:true,trim:true},
     joinDate: {type:Date, default:Date.now},
-    posts: String,
+    posts: Array,
+    // posts: [{
+    //     title: String,
+    //     content: String,
+    // }],
 });
 
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
+
+
