@@ -29,13 +29,13 @@ app.use(bodyParser.json());
 
 // Express Session Middleware
 app.use(session({
-    name: 'sid',
+    // name: 'sid',
     secret: process.env.SESSION_SECRET || 'SSShhhhhh, this is a secret...',
     resave: false,
     saveUninitialized: false,
-    cookie: {
-        maxAge: 1000 * 60 * 5
-    }
+    // cookie: {
+    //     maxAge: 1000 * 60 * 5
+    // }
 
 }));
 

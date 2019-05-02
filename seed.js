@@ -204,6 +204,7 @@ const userData = [
         // Create New Users
     db.User.create(userData, (err, newUsers) => {
         if (err) console.log(err);
+        console.log(newUsers);
         console.log(`Created ${newUsers.length} new users successfully`);
         process.exit();
         });

@@ -3,16 +3,11 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     name: String,
-    username: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true
-    },
+    username: String,
     currentCity: String,
     password: {
         type: String,
-        required: true,
+        // required: true,
     },
     email: {type:String, required:true, lowercase:true,trim:true},
     joinDate: {type:Date, default:Date.now},
