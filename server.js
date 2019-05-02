@@ -5,9 +5,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 
+
+
 // CONTROLLERS
 const usersCtrl = require('./controllers/usersCtrl');
-// const authCtrl = require('./controllers/authCtrl.js');
+const authCtrl = require('./controllers/authCtrl');
 
 
 // ----------------------------------- MIDDLEWARE ----------------------------------- //
@@ -25,6 +27,18 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Express Session Middleware
+app.use(session({
+    name: 'sid',
+    secret: process.env.SESSION_SECRET || 'SSShhhhhh, this is a secret...',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 5
+    }
+
+}));
+
 
 // ----------------------------------- HTML ROUTES ----------------------------------- //
 
@@ -34,13 +48,11 @@ app.get('/', (req, res) => {
 
 // ----------------------------------- API ROUTES ----------------------------------- //
 
-// Users
+// Users 
 app.use('/api/v1/users', usersCtrl);
 
-
-
 // Auth
-// app.use('/api/v1/signin', authCtrl);
+app.use('/api/v1/auth', authCtrl);
 
 // ----------------------------------- START SERVER ----------------------------------- //
 
