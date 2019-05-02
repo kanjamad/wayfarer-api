@@ -5,8 +5,9 @@ const UserSchema = new Schema({
     name: String,
     username: String,
     currentCity: String,
-    joinDate: Date,
-    posts: Array
+    email: {type:String, required:true, lowercase:true,trim:true},
+    joinDate: {type:Date, default:Date.now},
+    posts: String,
 });
 
 const User = mongoose.model('User', UserSchema);
