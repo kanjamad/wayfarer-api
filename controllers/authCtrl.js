@@ -26,7 +26,7 @@ router.get('/profile', (req, res) => {
 
   // GET New User Route
 router.get('/signup', (req, res) => {
-    res.json({staus: 200, message: "Success"})
+    res.json({staus: 200, message: "Success Signup "})
 });
 
 
@@ -90,7 +90,7 @@ router.post('/signup', (req, res) => {
 
 // GET Login Route
 router.get('/login', (req, res) => {
-    res.json({staus: 200, message: "Success"})
+    res.json({staus: 200, message: "Success login"})
 });
 
 // POST Login Route
@@ -135,7 +135,7 @@ router.post('/login', (req, res) => {
 router.get('/logout', (req, res) => {
     req.session.destroy(err => {
     if (err) return res.json({user: req.body, errors: [{message: 'Something went wrong. Please try again'}]});
-    res.json({staus: 200, message: "Success"})
+    res.json({staus: 200, message: "Success logout"})
     })
 });
 
