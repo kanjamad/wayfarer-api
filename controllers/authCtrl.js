@@ -12,16 +12,16 @@ router.get('/', (req, res) => {
     if (!req.session.loggedIn) {
         return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
     }
-    res.json({currentUser: req.session.currentUser}); 
+    res.json({currentUser: req.session.currentUser});  //Home
 });
 
 // GET Profile Route
-router.get('/profile', (req, res) => {
+router.get('/profile/:id', (req, res) => {
     // Only allow logged-in users to view this route
     if (!req.session.loggedIn) {
         return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
     }
-    res.json({currentUser: req.session.currentUser}); 
+    res.json({currentUser: req.session.currentUser}); // profile
 });
 
   // GET New User Route
@@ -35,8 +35,8 @@ router.post('/signup', (req, res) => {
     const errors = [];
     
     // Validate Form Data
-    if (!req.body.username) {
-    errors.push({message: 'Please enter your username'});
+    if (!req.body.name) {
+    errors.push({message: 'Please enter your name'});
     }
 
     if (!req.body.currentCity) {
@@ -70,7 +70,7 @@ router.post('/signup', (req, res) => {
 
         // Create an object to hold the new user information (with hashed password, not original password)
         const newUser = {
-        username: req.body.username,
+        name: req.body.name,
         currentCity: req.body.currentCity,
         email: req.body.email,
         password: hash,
@@ -90,7 +90,7 @@ router.post('/signup', (req, res) => {
 
 // GET Login Route
 router.get('/login', (req, res) => {
-    res.json({staus: 200, message: "Success login"})
+    res.json({staus: 200,message: "Success login"})
 });
 
 // POST Login Route
@@ -118,14 +118,16 @@ router.post('/login', (req, res) => {
         if (isMatch) {
         req.session.loggedIn = true;
         req.session.currentUser = {
+            id: foundUser._id,
             name: foundUser.name,
             email: foundUser.email,
         }
         // Redirect user to the dashboard
-        return res.json({staus: 200, message: "Success"})
+        res.send('Logged in successfully');
+        // return res.json({staus: 200, message: "Success"})
         } else {
         // If the passwords do not match, re-json the login page with error message
-        return res.json({user: req.body, errors: [{message: 'email or password is incorrect'}]});
+        if(err) return res.json({user: req.body, errors: [{message: 'email or password is incorrect'}]});
         }
     });
     });
