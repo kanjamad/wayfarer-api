@@ -35,8 +35,8 @@ router.post('/signup', (req, res) => {
     const errors = [];
     
     // Validate Form Data
-    if (!req.body.name) {
-    errors.push({message: 'Please enter your name'});
+    if (!req.body.username) {
+    errors.push({message: 'Please enter your username'});
     }
 
     if (!req.body.currentCity) {
@@ -70,7 +70,7 @@ router.post('/signup', (req, res) => {
 
         // Create an object to hold the new user information (with hashed password, not original password)
         const newUser = {
-        name: req.body.name,
+        username: req.body.username,
         currentCity: req.body.currentCity,
         email: req.body.email,
         password: hash,
