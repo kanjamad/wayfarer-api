@@ -96,7 +96,7 @@ router.post('/signup', (req, res) => {
         // If new user was created successfully, redirect user to login page
         // We could also create the session here (just like the login route), then redirect to the dashboard instead
         // res.redirect('/login');
-        res.json({staus: 200, message: "Success"})
+        res.json({status: 200, message: "Success", newUser})
         });
     });
     });
@@ -137,7 +137,7 @@ router.post('/login', (req, res) => {
             email: foundUser.email,
         }
         // Redirect user to the dashboard
-        res.send('Logged in successfully');
+        res.json({message: 'Logged in successfully', session: req.session});
         // return res.json({staus: 200, message: "Success"})
         } else {
         // If the passwords do not match, re-json the login page with error message
