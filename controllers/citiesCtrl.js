@@ -2,49 +2,40 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-
-
-
 router.get('/', (req, res) => {
-db.Post.find({})
-.populate('users')
-.populate('cities')
-.exec((err, allPosts) => {
+db.City.find({}, (err, allCities) => {
 if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
 
-res.json({status: 200, message: 'Success', data: allPosts});
+res.json({status: 200, message: 'Success', data: allCities});
 })
 });
 
 router.get('/:id', (req, res) => {
-db.Post.findById(req.params.id)
-.populate('users')
-.populate('cities') 
-.exec((err, foundPost) => {
+db.City.findById(req.params.id, (err, foundCity) => {
 if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
 
-res.json({status: 200, message: 'Success', data: foundPost});
+res.json({status: 200, message: 'Success', data: foundCity});
 });
 });
 
 router.post('/', (req, res) => {
-db.Post.create(req.body, (err, newPost) => {
+db.City.create(req.body, (err, newCity) => {
 if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
-res.json({status: 200, message: 'Success', data: newPost});
+res.json({status: 200, message: 'Success', data: newCity});
 });
 });
 
 router.put("/:id", (req, res) => {
-db.Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedPost) => {
+db.City.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedCity) => {
 if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
-res.json({status: 200, message: 'Success', data: updatedPost});
+res.json({status: 200, message: 'Success', data: updatedCity});
 });
 });
 
 router.delete('/:id', (req, res) => {
-db.Post.findByIdAndRemove(req.params.id, (err, deletedPost) => {
+db.City.findByIdAndRemove(req.params.id, (err, deletedCity) => {
 if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
-res.json({status: 200, message: 'Success', data: deletedPost});
+res.json({status: 200, message: 'Success', data: deletedCity});
 });
 });
 

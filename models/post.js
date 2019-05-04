@@ -2,15 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-    title: {
-    type: String,
-    default: ""
-},
-    content: {
-    type: String,
-    default: ""
-},
-    city:String,
+    title: String,
+    content: String,
+    photo:String,
+    user: [{ type: Schema.Types.ObjectId,ref: 'User'}], 
+    city: [{type: Schema.Types.ObjectId,  ref: 'City'}],
+    joinDate: {type:Date, default:Date.now},
 });
 
 const Post = mongoose.model('Post', postSchema);

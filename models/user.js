@@ -5,16 +5,11 @@ const UserSchema = new Schema({
     name: String,
     username: String,
     currentCity: String,
-    password: {
-        type: String,
-        // required: true,
-    },
+    photo:String,
+    password: {type: String,required: true,},
     email: {type:String, required:true, lowercase:true,trim:true},
+    // posts: [{type: Schema.Types.ObjectId,ref: 'Post'}],
     joinDate: {type:Date, default:Date.now},
-    posts: [{
-        type: Schema.Types.ObjectId,  //REFERENCING :D
-        ref: 'Post'
-    }],
     
 });
 

@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 4000;
 const usersCtrl = require('./controllers/usersCtrl');
 const authCtrl = require('./controllers/authCtrl');
 const postsCtrl = require('./controllers/postsCtrl');
+const citiesCtrl = require('./controllers/citiesCtrl');
 
 
 // ----------------------------------- MIDDLEWARE ----------------------------------- //
@@ -53,6 +54,8 @@ app.get('/', (req, res) => {
 app.use('/api/v1/users', usersCtrl);
 // Posts
 app.use('/api/v1/posts', postsCtrl);
+// Cities
+app.use('/api/v1/cities', citiesCtrl);
 
 // Auth
 app.use('/api/v1/auth', authCtrl);
