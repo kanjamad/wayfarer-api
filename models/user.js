@@ -11,11 +11,11 @@ const UserSchema = new Schema({
     },
     email: {type:String, required:true, lowercase:true,trim:true},
     joinDate: {type:Date, default:Date.now},
-    posts: Array,
-    // posts: [{
-    //     title: String,
-    //     content: String,
-    // }],
+    posts: [{
+        type: Schema.Types.ObjectId,  //REFERENCING :D
+        ref: 'Post'
+    }],
+    
 });
 
 const User = mongoose.model('User', UserSchema);
