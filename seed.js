@@ -276,7 +276,23 @@ db.User.create(users_list, (err, newUsers) => {
 // });
 // });
 
-// --------------------------
+
+// ------------posts----------------
+db.Post.deleteMany((err, deletedPosts) => {
+    if (err) console.log(err);
+    console.log('Deleted posts successfully');
+    // Create New Posts
+db.Post.create(posts_list, (err, newPosts) => {
+    if (err) console.log(err);
+    console.log(newPosts);
+    console.log(`Created ${newPosts.length} new posts successfully`);
+    process.exit();
+    });
+});
+
+
+
+// -------------City -------------
 
 db.City.deleteMany((err, deletedCities) => {
     if (err) console.log(err);
