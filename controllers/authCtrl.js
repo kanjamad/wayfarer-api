@@ -151,10 +151,38 @@ router.post('/login', (req, res) => {
 router.get('/logout', (req, res) => {
     req.session.destroy(err => {
     if (err) return res.json({user: req.body, errors: [{message: 'Something went wrong. Please try again'}]});
+    res.status(200).clearCookie('connect.sid',
+    {
+        path:'/',
+    })
     res.json({staus: 200, message: "Success logout"})
     })
 });
 
 
+// router.post('/logout', (req, res) => {
+//     req.session.destroy(err => {
+//     if (err) return res.json({user: req.body, errors: [{message: 'Something went wrong. Please try again'}]});
+//     res.status(200).clearCookie('connect.sid',
+//     {
+//         path:'/',
+//     })
+//     res.json({staus: 200, message: "Success logout"})
+//     })
+// });
+
+
+
+// POST '/logout'
+router.post('/logout', (req, res) => {
+    const genericError = 'Something went wrong. Please try again';
+    // Delete the user's session
+    req.session.destroy(err => {
+    if (err) return res.json({error: err, message: genericError});
+});
+    res.status(200).clearCookie('connect.sid', {
+    path: '/',
+}).json({loggedOut: true});
+});
 
 module.exports = router;
