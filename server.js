@@ -21,7 +21,7 @@ const citiesCtrl = require('./controllers/citiesCtrl');
 // npm i cors
 // Thank you Travis
 const corsOptions = {
-    origin: ['http://localhost:4000', ],
+    origin: ['http://localhost:3000', ],
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
     credentials: true, // This allows the session cookie to be sent back and forth
