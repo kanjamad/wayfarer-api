@@ -136,16 +136,41 @@ const posts_list =[
     
 },
 {
+    title:"Trip to London",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
+    city:"5ccdfc167f4e4e5198c92d98",
+    user:"5ccdfc167f4e4e5198c92d8c",
+    photo:"https://pixabay.com/get/e835b90e2ffc033ed1534705fb0938c9bd22ffd41cb417489cf9c17fa0/golden-gate-bridge-1081782_1920.jpg",
+    
+},
+{
     title:"Trip to Sydeny",
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d97",
     user:"5ccdfc167f4e4e5198c92d8d",
     photo:"https://pixabay.com/get/ea30b50c2ff11c22d9584518a33219c8b66ae3d01cb718489cf4c87a/sydney-opera-house-354375_1920.jpg",
     
-},{
+},
+{
     title:"Trip to London",
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d98",
+    user:"5ccdfc167f4e4e5198c92d8d",
+    photo:"https://pixabay.com/get/ea30b50c2ff11c22d9584518a33219c8b66ae3d01cb718489cf4c87a/sydney-opera-house-354375_1920.jpg",
+    
+},
+{
+    title:"Trip to London",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
+    city:"5ccdfc167f4e4e5198c92d98",
+    user:"5ccdfc167f4e4e5198c92d8e",
+    photo:"https://pixabay.com/get/eb36b80c28fd093ed1534705fb0938c9bd22ffd41cb417489cf9c47ea5/london-2393098_1920.jpg",
+    
+},
+{
+    title:"Trip to Seattle",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
+    city:"5ccdfc167f4e4e5198c92d99",
     user:"5ccdfc167f4e4e5198c92d8e",
     photo:"https://pixabay.com/get/eb36b80c28fd093ed1534705fb0938c9bd22ffd41cb417489cf9c47ea5/london-2393098_1920.jpg",
     
@@ -205,6 +230,35 @@ db.User.create(users_list, (err, newUsers) => {
 });
 
 
+
+// ------------posts----------------
+db.Post.deleteMany((err, deletedPosts) => {
+    if (err) console.log(err);
+    console.log('Deleted posts successfully');
+    // Create New Posts
+db.Post.create(posts_list, (err, newPosts) => {
+    if (err) console.log(err);
+    console.log(newPosts);
+    console.log(`Created ${newPosts.length} new posts successfully`);
+    process.exit();
+    });
+});
+
+
+
+// -------------City -------------
+
+db.City.deleteMany((err, deletedCities) => {
+    if (err) console.log(err);
+    console.log('Deleted Cities successfully');
+    // Create New Cities
+db.City.create(cities_list, (err, newCities) => {
+    if (err) console.log(err);
+    console.log(newCities);
+    console.log(`Created ${newCities.length} new cities successfully`);
+    process.exit();
+    });
+});
 
 
 
@@ -275,33 +329,3 @@ db.User.create(users_list, (err, newUsers) => {
 //     });
 // });
 // });
-
-
-// ------------posts----------------
-db.Post.deleteMany((err, deletedPosts) => {
-    if (err) console.log(err);
-    console.log('Deleted posts successfully');
-    // Create New Posts
-db.Post.create(posts_list, (err, newPosts) => {
-    if (err) console.log(err);
-    console.log(newPosts);
-    console.log(`Created ${newPosts.length} new posts successfully`);
-    process.exit();
-    });
-});
-
-
-
-// -------------City -------------
-
-db.City.deleteMany((err, deletedCities) => {
-    if (err) console.log(err);
-    console.log('Deleted Cities successfully');
-    // Create New Cities
-db.City.create(cities_list, (err, newCities) => {
-    if (err) console.log(err);
-    console.log(newCities);
-    console.log(`Created ${newCities.length} new cities successfully`);
-    process.exit();
-    });
-});

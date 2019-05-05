@@ -5,8 +5,8 @@ const postSchema = new Schema({
     title: String,
     content: String,
     photo:String,
-    user: [{ type: Schema.Types.ObjectId,ref: 'User'}], 
-    city: [{type: Schema.Types.ObjectId,  ref: 'City'}],
+    user: { type: Schema.Types.ObjectId,ref: 'User'}, 
+    city: {type: Schema.Types.ObjectId,  ref: 'City'},
     joinDate: {type:Date, default:Date.now},
 });
 

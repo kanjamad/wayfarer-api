@@ -2,9 +2,31 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+// ----
+router.get('/userposts/:userId', (req, res) => {
+db.Post.find({user: req.params.userId})
+.populate('users')
+.populate('cities')
+.exec((err, allPosts) => {
+if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
 
+res.json({status: 200, message: 'Success', data: allPosts});
+})
+})
 
+// -----
+router.get('/cityposts/:cityId', (req, res) => {
+    db.Post.find({city: req.params.cityId})
+    .populate('users')
+    .populate('cities')
+    .exec((err, allPosts) => {
+    if (err) return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
+    
+    res.json({status: 200, message: 'Success', data: allPosts});
+})
+});
 
+// index
 router.get('/', (req, res) => {
 db.Post.find({})
 .populate('users')
