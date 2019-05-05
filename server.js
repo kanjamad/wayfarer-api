@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -19,6 +20,7 @@ const citiesCtrl = require('./controllers/citiesCtrl');
 // CORS - Cross Origin Resource Sharing
 // Express CORS Middleware
 // npm i cors
+    // then don't for got const cors = require('cors'); above
 // Thank you Travis
 const corsOptions = {
     origin: ['http://localhost:3000', ],
