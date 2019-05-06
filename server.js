@@ -60,6 +60,7 @@ app.use(session({
         maxAge: 1000 * 60 * 5,
         httpOnly:false,
         secure: false,
+        // secure: true,
         path: '/'
     }
 
