@@ -94,10 +94,6 @@ router.get('/profile/:id', (req, res) => {
 
 // -------------------------------------------------
 
-  // GET New User Route
-router.get('/signup', (req, res) => {
-    res.json({staus: 200, message: "Success Signup "})
-});
 
 
 // POST Create User Route

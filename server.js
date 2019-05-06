@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -9,10 +10,12 @@ const PORT = process.env.PORT || 4000;
 
 
 // CONTROLLERS
-const usersCtrl = require('./controllers/usersCtrl');
-const authCtrl = require('./controllers/authCtrl');
-const postsCtrl = require('./controllers/postsCtrl');
-const citiesCtrl = require('./controllers/citiesCtrl');
+// const usersCtrl = require('./controllers/usersCtrl');
+// const authCtrl = require('./controllers/authCtrl');
+// const postsCtrl = require('./controllers/postsCtrl');
+// const citiesCtrl = require('./controllers/citiesCtrl');
+
+const ctrl = require('./controllers')
 
 
 // ----------------------------------- MIDDLEWARE ----------------------------------- //
@@ -75,15 +78,15 @@ app.get('/', (req, res) => {
 
 // ----------------------------------- API ROUTES ----------------------------------- //
 
-// Users 
-app.use('/api/v1/users', usersCtrl);
+// Users GET/PUT/DELETE && /:id GET/PUT/DELETE
+app.use('/api/v1/users', ctrl.user);
 // Posts
-app.use('/api/v1/posts', postsCtrl);
+app.use('/api/v1/posts', ctrl.post);
 // Cities
-app.use('/api/v1/cities', citiesCtrl);
+app.use('/api/v1/cities', ctrl.city);
 
 // Auth
-app.use('/api/v1/auth', authCtrl);
+app.use('/api/v1/auth', ctrl.auth);
 
 // ----------------------------------- START SERVER ----------------------------------- //
 

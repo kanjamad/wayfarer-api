@@ -9,10 +9,7 @@ const users_list = [
     city:"San Francisco",
     currentCity: "5ccdfc167f4e4e5198c92d96",
     photo:"https://engineering.unl.edu/images/staff/Kayla_Person-small.jpg",
-    
-    joinDate:"1/22/2019",default:Date.now,
-    
-
+    joinDate:"1/22/2019",default:Date.now, 
 },
     {
     name: "Ervin Howell",
@@ -220,7 +217,6 @@ const cities_list =[
         title:"I love Seattle",
         cityName:"Seattle",
         photo:"https://www.citizenm.com/cache/images/seattle_city_image_1200x675-1_004b02a34b02a3.jpg",
-    
     },
 
 ]
@@ -238,8 +234,6 @@ db.User.create(users_list, (err, newUsers) => {
     });
 });
 
-
-
 // ------------posts----------------
 db.Post.deleteMany((err, deletedPosts) => {
     if (err) console.log(err);
@@ -252,8 +246,6 @@ db.Post.create(posts_list, (err, newPosts) => {
     process.exit();
     });
 });
-
-
 
 // -------------City -------------
 
@@ -268,9 +260,6 @@ db.City.create(cities_list, (err, newCities) => {
     process.exit();
     });
 });
-
-
-
 
 // --------------
 

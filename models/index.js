@@ -5,8 +5,8 @@ mongoose.connect(DB_URL, { useNewUrlParser: true, useFindAndModify: false, useCr
     .then(() => console.log('MongoDB connected...'))
     .catch((err) => console.log(err));
 
-    module.exports = {
-        User: require('./user'),
-        Post: require('./post'),
-        City: require('./city'),
+module.exports = {
+    User : require('./user'),
+    Post : require('./post'),
+    City : require('./city'),
 };
