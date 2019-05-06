@@ -8,80 +8,80 @@ const db = require('../models');
 
 // GET Root Route
 // -------------------
-// router.get('/', (req, res) => {
-//     // Only allow logged-in users to view this route
-//     if (!req.session.loggedIn) {
-//         return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
-//     }
-//     res.json({currentUser: req.session.currentUser});  //Home
-// });
+router.get('/', (req, res) => {
+    // Only allow logged-in users to view this route
+    if (!req.session.loggedIn) {
+        return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
+    }
+    res.json({currentUser: req.session.currentUser});  //Home
+});
 
-// // GET Profile Route
-// router.get('/profile/:id', (req, res) => {
-//     // Only allow logged-in users to view this route
-//     if (!req.session.loggedIn) {
-//         return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
-//     }
-//     res.json({currentUser: req.session.currentUser}); // profile
-// });
+// GET Profile Route
+router.get('/profile/:id', (req, res) => {
+    // Only allow logged-in users to view this route
+    if (!req.session.loggedIn) {
+        return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
+    }
+    res.json({currentUser: req.session.currentUser}); // profile
+});
 // -----------------------
 
 
 // GET '/profile'
-router.get('/profile', (req, res) => {
-    // Check if user is logged in
-if (!req.session.loggedIn) {
-    return res.json({loggedIn: false})
-}
-// Get the username
-const { username } = req.session.currentUser;
-// Look up their profile
-db.UserData.findOne({username})
-    .catch(err => res.json({username, errors: [{message: genericError}]}))
-    .then(foundUser => {
-    // If no user found...
-    if (!foundUser) return res.json({username, errors: [{message: 'Unknown username'}]});
-    // otherwise return the user info, minus the password hash
-    foundUser.password = '';
-    return res.json({loggedIn: true, foundUser});
-    });
-});
-// // Todo React frontend will open login modal if it gets loggedIn === false response
-
-// PUT '/profile'
-// // For updating the profile
-// // Checks session token to get the username
-// // The username in the session token also acts as validation they are allowed to edit
-
-router.put('/profile', (req, res) => {
-const genericError = 'Please try again. Error updating profile';
-if (!req.session.loggedIn) {
-    return res.json({loggedIn: false})
-}
-const { username } = req.session.currentUser;
-// const updateUser = {
-//   email: req.body.email,
-//   username: req.body.username,
-//   name: req.body.name,
-//   currentCity: req.body.currentCity,
+// router.get('/profile', (req, res) => {
+//     // Check if user is logged in
+// if (!req.session.loggedIn) {
+//     return res.json({loggedIn: false})
 // }
+// // Get the username
+// const { username } = req.session.currentUser;
+// // Look up their profile
+// db.UserData.findOne({username})
+//     .catch(err => res.json({username, errors: [{message: genericError}]}))
+//     .then(foundUser => {
+//     // If no user found...
+//     if (!foundUser) return res.json({username, errors: [{message: 'Unknown username'}]});
+//     // otherwise return the user info, minus the password hash
+//     foundUser.password = '';
+//     return res.json({loggedIn: true, foundUser});
+//     });
+// });
+// // // Todo React frontend will open login modal if it gets loggedIn === false response
 
-db.UserData.findOneAndUpdate({username}, req.body, {new: true} )
-    .catch(err => res.json({username, errors: [{message: genericError}]}))
-    .then(updatedUser => {
-    // If no user found...
-    if (!updatedUser) return res.json({username, errors: [{message: 'Unknown username'}]});
+// // PUT '/profile'
+// // // For updating the profile
+// // // Checks session token to get the username
+// // // The username in the session token also acts as validation they are allowed to edit
 
-    // If username changed then change username in their session token
-    if (updatedUser.username !== username){
-        req.session.currentUser = {
-        username: updatedUser.username,
-        };
-    }
-    // otherwise return success
-    return res.json({success: true});
-    });
-});
+// router.put('/profile', (req, res) => {
+// const genericError = 'Please try again. Error updating profile';
+// if (!req.session.loggedIn) {
+//     return res.json({loggedIn: false})
+// }
+// const { username } = req.session.currentUser;
+// // const updateUser = {
+// //   email: req.body.email,
+// //   username: req.body.username,
+// //   name: req.body.name,
+// //   currentCity: req.body.currentCity,
+// // }
+
+// db.UserData.findOneAndUpdate({username}, req.body, {new: true} )
+//     .catch(err => res.json({username, errors: [{message: genericError}]}))
+//     .then(updatedUser => {
+//     // If no user found...
+//     if (!updatedUser) return res.json({username, errors: [{message: 'Unknown username'}]});
+
+//     // If username changed then change username in their session token
+//     if (updatedUser.username !== username){
+//         req.session.currentUser = {
+//         username: updatedUser.username,
+//         };
+//     }
+//     // otherwise return success
+//     return res.json({success: true});
+//     });
+// });
 
 
 
