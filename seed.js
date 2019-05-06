@@ -8,7 +8,7 @@ const users_list = [
     password:"1234",
     city:"San Francisco",
     currentCity: "5ccdfc167f4e4e5198c92d96",
-    photo:"https://pixabay.com/get/eb35b10c2ef0063ed1534705fb0938c9bd22ffd41cb4164195f0c37ba3/woman-2003647_1920.jpg",
+    photo:"https://engineering.unl.edu/images/staff/Kayla_Person-small.jpg",
     
     joinDate:"1/22/2019",default:Date.now,
     
@@ -21,7 +21,7 @@ const users_list = [
     password:"1234",
     city:"Sydeny",
     currentCity: "5ccdfc167f4e4e5198c92d97",
-    photo:"https://pixabay.com/get/ec3cb20c2dfc1c22d9584518a33219c8b66ae3d01cb6114195f2c97d/entrepreneur-593358_1920.jpg",
+    photo:"https://secure.gravatar.com/avatar/75f51a0c3f486a49fae5bdf2f7094532?s=300&d=mm&r=g",
     
     joinDate:"9/6/2018",default:Date.now,
     
@@ -34,7 +34,7 @@ const users_list = [
     password:"1234",
     city:"London",
     currentCity: "5ccdfc167f4e4e5198c92d98",
-    photo:"https://pixabay.com/get/e837b60b28f1073ed1534705fb0938c9bd22ffd41cb4164195f0c27aa0/beautiful-1274056_1920.jpg",
+    photo:"https://carwad.net/sites/default/files/happy-person-picture-130535-9475541.jpg",
     
     joinDate:"1/2/2019",default:Date.now,
     
@@ -46,7 +46,7 @@ const users_list = [
     password:"1234",
     city:"Seattle",
     currentCity: "5ccdfc167f4e4e5198c92d99",
-    photo:"https://pixabay.com/get/e83db3072df7073ed1534705fb0938c9bd22ffd41cb4164195f0c271a6/girl-1828536_1920.jpg",
+    photo:"https://vignette.wikia.nocookie.net/fox-thegifted/images/0/08/Amy_Acker.png/revision/latest?cb=20180922230337",
     
     joinDate:"3/4/2019",default:Date.now,
     
@@ -60,7 +60,7 @@ const users_list = [
     password:"1234",
     city:"San Francisco",
     currentCity:"5ccdfc167f4e4e5198c92d96",
-    photo:"https://pixabay.com/get/ed35b60d29f61c22d9584518a33219c8b66ae3d01cb6114195f4c378/guitarist-407212_1920.jpg",
+    photo:"http://dwgyu36up6iuz.cloudfront.net/heru80fdn/image/upload/c_fill,d_placeholder_thescene.jpg,fl_progressive,g_face,h_450,q_80,w_800/v1477940820/glamour_woman-of-the-year-ashley-graham-sounds-off-on-shirtless-selfies-dirty-talk-and-the-thigh-gap.jpg",
     
     joinDate:"1/27/2019",default:Date.now,
     
@@ -72,7 +72,7 @@ const users_list = [
     password:"1234",
     city:"Sydeny",
     currentCity: "5ccdfc167f4e4e5198c92d97",
-    photo:"https://pixabay.com/get/e834b50621f5003ed1534705fb0938c9bd22ffd41cb4164195f0c57ea6/woman-1149911_1920.jpg",
+    photo:"https://cdn1.medicalnewstoday.com/content/images/articles/320/320137/smiling-middle-aged-woman.jpg",
     
     joinDate:"5/2/2017",default:Date.now,
     
@@ -84,7 +84,7 @@ const users_list = [
     password:"1234",
     city:"London",
     currentCity: "5ccdfc167f4e4e5198c92d98",
-    photo:"https://pixabay.com/get/ea31b80821f41c22d9584518a33219c8b66ae3d01cb6114195f5c579/musician-349790_1920.jpg",
+    photo:"http://dailytrojan.com/wp-content/uploads/2018/01/loganpaul.jpg",
     
     joinDate:"11/2/2018",default:Date.now,
     
@@ -96,7 +96,7 @@ const users_list = [
     password:"1234",
     city:"Seattle",
     currentCity: "5ccdfc167f4e4e5198c92d99",
-    photo:"https://pixabay.com/get/e830b70e21fc083ed1534705fb0938c9bd22ffd41cb4164195f0c779af/girl-1561989_1920.jpg",
+    photo:"http://202.166.198.46/bgjobs/static/uploads/ac8f34e3759decb7a5c0ae12de152c0b.jpg",
     
     joinDate:"12/2/2018",default:Date.now,
     
@@ -108,7 +108,7 @@ const users_list = [
     password:"1234",
     city:"London",
     currentCity: "5ccdfc167f4e4e5198c92d98",
-    photo:"https://pixabay.com/get/e832b90b2bf3003ed1534705fb0938c9bd22ffd41cb4164195f0c771a0/family-1784371_1920.jpg",
+    photo:"https://images.askmen.com/1080x540/2017/02/06-125457-things_to_consider_before_dating_a_younger_woman.jpg",
     
     joinDate:"11/2/2017",default:Date.now,
 },
@@ -119,7 +119,7 @@ const users_list = [
     password:"1234",
     city:"Seattle",
     currentCity: "5ccdfc167f4e4e5198c92d99",
-    photo:"https://pixabay.com/get/e832b90b2bf3003ed1534705fb0938c9bd22ffd41cb4164195f0c771a0/family-1784371_1920.jpg",
+    photo:"https://www.sss.gov/portals/0/Images/Women-and-the-Draft.jpg",
     
     joinDate:"8/2/2018",default:Date.now,
     
@@ -132,7 +132,7 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d96",
     user:"5ccdfc167f4e4e5198c92d8c",
-    photo:"https://pixabay.com/get/e835b90e2ffc033ed1534705fb0938c9bd22ffd41cb417489cf9c17fa0/golden-gate-bridge-1081782_1920.jpg",
+    photo:"http://velocity.uwaterloo.ca/wp-content/uploads/2016/01/san-franc.jpg",
     
 },
 {
@@ -140,7 +140,7 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d98",
     user:"5ccdfc167f4e4e5198c92d8c",
-    photo:"https://pixabay.com/get/e835b90e2ffc033ed1534705fb0938c9bd22ffd41cb417489cf9c17fa0/golden-gate-bridge-1081782_1920.jpg",
+    photo:"https://assets1b.milkeninstitute.org/assets/Events/Conferences/Summit/2018/_resampled/FillWyIxOTgwIiwiMTI1MCJd/london-2393098-1920.jpg",
     
 },
 {
@@ -148,7 +148,7 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d97",
     user:"5ccdfc167f4e4e5198c92d8d",
-    photo:"https://pixabay.com/get/ea30b50c2ff11c22d9584518a33219c8b66ae3d01cb718489cf4c87a/sydney-opera-house-354375_1920.jpg",
+    photo:"https://www.sydney.canna-tech.co/wp-content/uploads/2018/07/hp-header-sydney.jpg",
     
 },
 {
@@ -156,7 +156,7 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d98",
     user:"5ccdfc167f4e4e5198c92d8d",
-    photo:"https://pixabay.com/get/ea30b50c2ff11c22d9584518a33219c8b66ae3d01cb718489cf4c87a/sydney-opera-house-354375_1920.jpg",
+    photo:"https://assets1b.milkeninstitute.org/assets/Events/Conferences/Summit/2018/_resampled/FillWyIxOTgwIiwiMTI1MCJd/london-2393098-1920.jpg",
     
 },
 {
@@ -164,7 +164,7 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d98",
     user:"5ccdfc167f4e4e5198c92d8e",
-    photo:"https://pixabay.com/get/eb36b80c28fd093ed1534705fb0938c9bd22ffd41cb417489cf9c47ea5/london-2393098_1920.jpg",
+    photo:"https://assets1b.milkeninstitute.org/assets/Events/Conferences/Summit/2018/_resampled/FillWyIxOTgwIiwiMTI1MCJd/london-2393098-1920.jpg",
     
 },
 {
@@ -172,7 +172,7 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d99",
     user:"5ccdfc167f4e4e5198c92d8e",
-    photo:"https://pixabay.com/get/eb36b80c28fd093ed1534705fb0938c9bd22ffd41cb417489cf9c47ea5/london-2393098_1920.jpg",
+    photo:"https://www.citizenm.com/cache/images/seattle_city_image_1200x675-1_004b02a34b02a3.jpg",
     
 },
 {
@@ -180,9 +180,18 @@ const posts_list =[
     content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
     city:"5ccdfc167f4e4e5198c92d99",
     user:"5ccdfc167f4e4e5198c92d8f",
-    photo:"https://pixabay.com/get/eb33b00b2df2083ed1534705fb0938c9bd22ffd41cb4164195f0c67ba1/model-2614569_1920.jpg",
+    photo:"https://www.citizenm.com/cache/images/seattle_city_image_1200x675-1_004b02a34b02a3.jpg",
     
 },
+{
+    title:"Trip to London",
+    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",   
+    city:"5ccdfc167f4e4e5198c92d98",
+    user:"5ccdfc167f4e4e5198c92d8f",
+    photo:"https://assets1b.milkeninstitute.org/assets/Events/Conferences/Summit/2018/_resampled/FillWyIxOTgwIiwiMTI1MCJd/london-2393098-1920.jpg",
+    
+},
+
 
 ]
 
@@ -190,27 +199,27 @@ const posts_list =[
 
 const cities_list =[
     {
-        title:"",
+        title:" I love San Francisco",
         cityName:"San Francisco",
-        photo:"https://pixabay.com/get/e835b90e2ffc033ed1534705fb0938c9bd22ffd41cb417489cf9c17fa0/golden-gate-bridge-1081782_1920.jpg",
+        photo:"http://velocity.uwaterloo.ca/wp-content/uploads/2016/01/san-franc.jpg",
     
     },
     {
-        title:"",
+        title:"I love Sydeny",
         cityName:"Sydeny",
-        photo:"https://pixabay.com/get/ea30b50c2ff11c22d9584518a33219c8b66ae3d01cb718489cf4c87a/sydney-opera-house-354375_1920.jpg",
+        photo:"https://www.sydney.canna-tech.co/wp-content/uploads/2018/07/hp-header-sydney.jpg",
     
     },
     {
-        title:"",
+        title:" I love London",
         cityName:"London",
-        photo:"https://pixabay.com/get/eb36b80c28fd093ed1534705fb0938c9bd22ffd41cb417489cf9c47ea5/london-2393098_1920.jpg",
+        photo:"https://assets1b.milkeninstitute.org/assets/Events/Conferences/Summit/2018/_resampled/FillWyIxOTgwIiwiMTI1MCJd/london-2393098-1920.jpg",
     
     },
     {
-        title:"",
+        title:"I love Seattle",
         cityName:"Seattle",
-        photo:"https://pixabay.com/get/e132b10d20f61c22d9584518a33219c8b66ae3d01cb718489cf6c371/seattle-870282_1920.jpg",
+        photo:"https://www.citizenm.com/cache/images/seattle_city_image_1200x675-1_004b02a34b02a3.jpg",
     
     },
 
