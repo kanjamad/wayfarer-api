@@ -5,6 +5,7 @@ const citySchema = new Schema({
     title:String,
     photo:String,
     cityName:String,
+    
 });
 
 const City = mongoose.model('City', citySchema);
