@@ -10,9 +10,9 @@ const db = require('../models');
 // -------------------
 router.get('/', (req, res) => {
     // Only allow logged-in users to view this route
-    if (!req.session.loggedIn) {
-        return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
-    }
+   // if (!req.session.loggedIn) {
+   //     return res.status(500).json({status: 500, error: 'Something went wrong, please try again'});
+   // }
     res.json({currentUser: req.session.currentUser});  //Home
 });
 
